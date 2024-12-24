@@ -14,6 +14,7 @@ export default function RootLayout({
       <head>
         <title>xdearboy</title>
         <meta name="description" content="xdearboy fisrt work on next.js" />
+        <SpeedInsights />
       </head>
       <body className={jetbrainsMono.className}>{children}</body>
     </html>
