@@ -19,6 +19,7 @@
     "yandex-music": "^1.7.0"
   },
   "devDependencies": {
+    "@vercel/speed-insights/next": "^1.0.12",
     "@eslint/eslintrc": "^3",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
