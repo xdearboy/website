@@ -4,7 +4,7 @@ import useSWR from 'swr';
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 export default function Home() {
-  const { data, error } = useSWR('http://127.0.0.1:8000/current_track', fetcher);
+  const { data, error } = useSWR('https://back.arsd3v.keenetic.pro/current_track', fetcher);
   const track = data || { title: '', artist: '' };
   const isLoading = !error && !data;
   if (error) {
