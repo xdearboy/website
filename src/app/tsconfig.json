@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "jsx": "react-jsx",
         "target": "ES6",
         "module": "commonjs",
         "strict": true,
@@ -9,6 +10,7 @@
         "outDir": "./dist"
     },
     "include": [
-        "src"
-    ]
+        "./**/*.ts",
+        "./**/*.tsx"
+    ],
 }

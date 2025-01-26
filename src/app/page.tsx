@@ -41,6 +41,8 @@ export default function Home() {
             }}>[discord]</span>
             <span className="mx-2">|</span>
             <a href="https://t.me/vroffteam" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">[blog]</a>
+            <span className="mx-2">|</span>
+            <a href="/donate" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">[donate]</a>
           </nav>
         </div>
 

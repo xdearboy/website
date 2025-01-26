@@ -19,3 +19,13 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  :root {
+    --font-jetbrains: "JetBrains Mono", monospace;
+  }
+
+  body {
+    font-family: var(--font-jetbrains);
+  }
+}
