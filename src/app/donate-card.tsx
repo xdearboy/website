@@ -35,7 +35,7 @@ export default function DonateCard() {
         },
         {
             title: "TON",
-            value: "UQCErKzWZGFTKQ_oyRvpDn_S452RmMmQh9s-GWz9-9ygjxiy",
+            value: "UQCErKzWZGFTKO_oyRvpDn_5452RmMmQh9s-GWz9-9ygjxiy",
         },
         {
             title: (
@@ -44,7 +44,7 @@ export default function DonateCard() {
                     <span className="text-[14px] text-gray-600">мин. сумма - 10 TRX</span>
                 </span>
             ),
-            value: "TUFk7BZJMUNCQQtSLparZxyBeGei461sfP",
+            value: "TUFk7BZJWUNCQQtSLparZxyBeGei461sfP",
         },
     ]
 
