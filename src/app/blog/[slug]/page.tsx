@@ -49,7 +49,7 @@ export default async function PostPage(props: PostPageProps) {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-start pt-12 px-4 sm:px-6"
+      className="min-h-screen flex flex-col items-center justify-start pt-12 px-4 sm:px-6 pb-12 md:pb-0"
       style={{
         background:
           "linear-gradient(108deg, rgba(85, 102, 221, 0.84) 0%, rgba(140, 134, 198, 0.90) 50%, rgba(90, 160, 152, 0.90) 100%)",
