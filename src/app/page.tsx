@@ -8,6 +8,35 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const fetchTrack = async () => {
+      try {
+        const response = await fetch("https://lively-limit-c955.arsd3v.workers.dev/", {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+          // Добавляем параметры для предотвращения кэширования
+          cache: "no-store",
+        })
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`)
+        }
+
+        const data = await response.json()
+        setTrack(data || { title: "", artist: "" })
+      } catch (err) {
+        console.error("Ошибка получения данных:", err)
+        setError(err)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchTrack()
+  }, [])
+
   return (
     <div
       className="flex min-h-screen items-center justify-center px-4"
@@ -18,7 +47,10 @@ export default function Home() {
     >
       <div className="flex flex-col items-center">
         <div className="w-full max-w-[400px] p-6 sm:p-8 text-center rounded-lg border border-[#9BA3D6] bg-white/50 shadow-[0_0_26px_0_rgba(0,0,0,0.3)]">
-
+          <p className="mb-8 font-mono text-black">
+            сейчас играет у меня в Я.Музыке: <br /> <b>{isLoading ? "загрузка..." : track.title}</b> -{" "}
+            <b>{isLoading ? "" : track.artist}</b>
+          </p>
           <pre className="mb-4 font-mono text-black text-xl sm:text-2xl">
             {`/\\_/\\
 ( o.o )
