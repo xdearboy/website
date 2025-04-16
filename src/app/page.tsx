@@ -16,7 +16,6 @@ export default function Home() {
           headers: {
             Accept: "application/json",
           },
-          // Добавляем параметры для предотвращения кэширования
           cache: "no-store",
         })
 
