@@ -2,39 +2,43 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import useSWR from "swr";
 
 export default function Home() {
   const [track, setTrack] = useState({ title: "", artist: "" });
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [fetchError, setFetchError] = useState(null);
 
-  useEffect(() => {
-    const fetchTrack = async () => {
-      try {
-        const response = await fetch("https://lively-limit-c955.arsd3v.workers.dev/", {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-          },
-          cache: "no-store",
-        })
+  const { data, error: swrError } = useSWR("https://lively-limit-c955.arsd3v.workers.dev/", async (url) => {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+      cache: "no-store",
+    });
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`)
-        }
-
-        const data = await response.json()
-        setTrack(data || { title: "", artist: "" })
-      } catch (err) {
-        console.error("Ошибка получения данных:", err)
-        setError(err)
-      } finally {
-        setIsLoading(false)
-      }
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    fetchTrack()
-  }, [])
+    return response.json();
+  });
+
+  useEffect(() => {
+    if (data) {
+      setTrack(data);
+      setIsLoading(false);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (swrError) {
+      console.error("Ошибка получения данных:", swrError);
+      setFetchError(swrError);
+      setIsLoading(false);
+    }
+  }, [swrError]);
 
   return (
     <div
