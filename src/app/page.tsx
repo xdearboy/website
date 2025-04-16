@@ -1,48 +1,90 @@
 "use client";
-import useSWR from 'swr';
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
-  const { data, error } = useSWR('https://back.arsd3v.keenetic.pro/current_track', fetcher);
-  const track = data || { title: '', artist: '' };
-  const isLoading = !error && !data;
-  if (error) {
-    console.error('Ошибка получения данных:', error);
-  }
+  const [track, setTrack] = useState({ title: "", artist: "" });
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ background: 'linear-gradient(108deg, rgba(85, 102, 221, 0.84) 0%, rgba(140, 134, 198, 0.90) 50%, rgba(90, 160, 152, 0.90) 100%)' }}>
+    <div
+      className="flex min-h-screen items-center justify-center px-4"
+      style={{
+        background:
+          "linear-gradient(108deg, rgba(85, 102, 221, 0.84) 0%, rgba(140, 134, 198, 0.90) 50%, rgba(90, 160, 152, 0.90) 100%)",
+      }}
+    >
       <div className="flex flex-col items-center">
-        <div className="w-[400px] p-8 text-center rounded-lg border border-[#9BA3D6] bg-white/50 shadow-[0_0_26px_0_rgba(0,0,0,0.3)]">
-          <p className="mb-8 font-mono text-black">
-            сейчас играет у меня в Я.Музыке: <b>{track.title}</b> - <b>{track.artist}</b>
-          </p>
+        <div className="w-full max-w-[400px] p-6 sm:p-8 text-center rounded-lg border border-[#9BA3D6] bg-white/50 shadow-[0_0_26px_0_rgba(0,0,0,0.3)]">
 
-          <pre className="mb-4 font-mono text-black text-2xl">
+          <pre className="mb-4 font-mono text-black text-xl sm:text-2xl">
             {`/\\_/\\
 ( o.o )
 > ^ <`}
           </pre>
 
-          <h1 className="mb-2 font-mono text-black text-2xl">xdearboy</h1>
-          <h1 className="mb-8 font-mono text-black">programmer, designer, and just a chill guy</h1>
+          <h1 className="mb-2 font-mono text-black text-xl sm:text-2xl">
+            xdearboy
+          </h1>
+          <h1 className="mb-2 font-mono text-black">
+            programmer, designer, and just a chill guy
+          </h1>
 
           <nav className="font-mono text-black">
-            <a href="https://github.com/xdearboy" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">[github]</a>
+            <a
+              href="https://github.com/xdearboy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-90 active:opacity-80 hover:scale-[98%] active:scale-[96%] transition-all duration-200 inline-block"
+            >
+              [github]
+            </a>
             <span className="mx-2">|</span>
-            <a href="https://t.me/contactfiuimwix_bot" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">[telegram]</a>
+            <a
+              href="https://t.me/contactfiuimwix_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-90 active:opacity-80 hover:scale-[98%] active:scale-[96%] transition-all duration-200 inline-block"
+            >
+              [telegram]
+            </a>
             <span className="mx-2">|</span>
-            <a href="https://github.com/xdearboy/pterodactyl-crasher" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">[ptero-crasher]</a>
+            <a
+              href="https://github.com/xdearboy/pterodactyl-crasher"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-90 active:opacity-80 hover:scale-[98%] active:scale-[96%] transition-all duration-200 inline-block"
+            >
+              [ptero-crasher]
+            </a>
             <span className="mx-2">|</span>
-            <span className="underline cursor-pointer" onClick={() => {
-              navigator.clipboard.writeText('feeeeelbaaaaad');
-              alert('Юзернейм скопирован!');
-            }}>[discord]</span>
+            <span
+              className="underline cursor-pointer hover:opacity-90 active:opacity-80 hover:scale-[98%] active:scale-[96%] transition-all duration-200 inline-block"
+              onClick={() => {
+                navigator.clipboard.writeText("feeeeelbaaaaad");
+                alert("Юзернейм скопирован!");
+              }}
+            >
+              [discord]
+            </span>
             <span className="mx-2">|</span>
-            <a href="https://t.me/vroffteam" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">[blog]</a>
+            <Link
+              href="/blog"
+              className="underline hover:opacity-90 active:opacity-80 hover:scale-[98%] active:scale-[96%] transition-all duration-200 inline-block"
+            >
+              [blog]
+            </Link>
             <span className="mx-2">|</span>
-            <a href="/donate" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">[donate]</a>
+            <a
+              href="/donate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-90 active:opacity-80 hover:scale-[98%] active:scale-[96%] transition-all duration-200 inline-block"
+            >
+              [donate]
+            </a>
           </nav>
         </div>
 
@@ -51,6 +93,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

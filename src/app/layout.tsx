@@ -1,13 +1,13 @@
-import './globals.css'
-import { JetBrains_Mono } from 'next/font/google'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import "./globals.css";
+import { JetBrains_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin', 'cyrillic'] })
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin", "cyrillic"] });
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="ru">
@@ -18,6 +18,5 @@ export default function RootLayout({
       </head>
       <body className={jetbrainsMono.className}>{children}</body>
     </html>
-  )
+  );
 }
-

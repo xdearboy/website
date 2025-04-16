@@ -1,85 +1,83 @@
 <!doctype html>
 <html
-    lang="ru"
-    style="
-        width: 100vw;
-        height: 100vh;
-        background: linear-gradient(
-            135deg,
-            rgba(85, 102, 221, 0.84) 0%,
-            rgba(140, 134, 198, 0.9) 50%,
-            rgba(90, 160, 152, 0.9) 100%
-        );
-        overflow: auto;
+  lang="ru"
+  style="
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+      135deg,
+      rgba(85, 102, 221, 0.84) 0%,
+      rgba(140, 134, 198, 0.9) 50%,
+      rgba(90, 160, 152, 0.9) 100%
+    );
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+  "
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <title>429: Too Many Requests</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        font-family: "JetBrains Mono", monospace;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 10px;
+        width: 100%;
         box-sizing: border-box;
-    "
->
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1,maximum-scale=1"
-        />
-        <title>429: Too Many Requests</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            html,
-            body {
-                margin: 0;
-                height: 100%;
-                font-family: "JetBrains Mono", monospace;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                box-sizing: border-box;
-            }
-            .container {
-                background: rgba(255, 255, 255, 0.5);
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 0 26px rgba(0, 0, 0, 0.3);
-                text-align: center;
-            }
-            .title {
-                color: #9966cc;
-                font-size: 36px;
-                font-weight: 700;
-                margin-bottom: 10px;
-            }
-            .message {
-                color: #00000;
-                font-size: 18px;
-            }
-            a {
-                color: #5d76cb;
-                text-decoration: none;
-                font-weight: 700;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="title">429</div>
-            <div class="message">
-                Ваш запрос заблокирован, так как отправляется слишком часто.<br />Если
-                это ошибка, свяжитесь с владельцем по
-                <a href="https://t.me/ddosmitigator1337" target="_blank"
-                    >Telegram</a
-                >.
-            </div>
-        </div>
-    </body>
+      }
+      .container {
+        background: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 26px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+      .title {
+        color: #9966cc;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .message {
+        color: #00000;
+        font-size: 18px;
+      }
+      a {
+        color: #5d76cb;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">429</div>
+      <div class="message">
+        Ваш запрос заблокирован, так как отправляется слишком часто.<br />Если
+        это ошибка, свяжитесь с владельцем по
+        <a href="https://t.me/ddosmitigator1337" target="_blank">Telegram</a>.
+      </div>
+    </div>
+  </body>
 </html>
