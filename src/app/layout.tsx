@@ -13,7 +13,7 @@ export default function RootLayout({
     <html lang="ru">
       <head>
         <title>xdearboy</title>
-        <meta name="description" content="xdearboy fisrt work on next.js" />
+        <meta name="description" content="Крутой вебсайтик на нечистом React от xdearboy, то есть меня." />
         <SpeedInsights />
       </head>
       <body className={jetbrainsMono.className}>{children}</body>
