@@ -112,6 +112,13 @@ export default function Home() {
               [blog]
             </Link>
             <span className="mx-2">|</span>
+            <Link
+              href="https://t.me/vroffteam"
+              className="underline hover:opacity-90 active:opacity-80 hover:scale-[98%] active:scale-[96%] transition-all duration-200 inline-block"
+            >
+              [blog in tg]
+            </Link>
+            <span className="mx-2">|</span>
             <a
               href="/donate"
               target="_blank"
